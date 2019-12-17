@@ -9,9 +9,9 @@
           = f.button class: "sub-button" do
             %i.fas.fa-search
       .sign-btn.item.account
-        = link_to "新規登録", class: "signup-account"
+        = link_to "新規登録", new_user_registration_path, class: "signup-account"
       .login-btn.item.account
-        = link_to "ログイン", class: "login-account"
+        = link_to "ログイン", new_user_session_path, class: "login-account"
   .top-page-middle
     .jobs-list
       .jobs-list__box
