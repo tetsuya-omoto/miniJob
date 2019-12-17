@@ -1,17 +1,5 @@
 .top-page-body
-  .header
-    .header-list
-      .logo-mark.item
-        MiniJob
-      .item
-        = form_with class: "search-form", local: true do |f|
-          = f.text_field :keyword, type: "search", placeholder: "検索フォームです！！", value: "", class: "texts", name: "keyword", id: ""
-          = f.button class: "sub-button" do
-            %i.fas.fa-search
-      .sign-btn.item.account
-        = link_to "新規登録", new_user_registration_path, class: "signup-account"
-      .login-btn.item.account
-        = link_to "ログイン", new_user_session_path, class: "login-account"
+  = render "layouts/header"
   .top-page-middle
     .jobs-list
       .jobs-list__box
@@ -34,6 +22,4 @@
                 job.textです。200字以内の商品説明文を表示されるように設定します。
                 今書いてあるものは仮置きです。アイコンはガッキーです。可愛いですよね。
                 私はガッキーと貫地谷しほりが好きです。あなたはどの女優さんが好きですか？
-  .footer
-    .footer__content
-      ©️Tetsuya Omoto
+  = render "layouts/footer"

@@ -1,0 +1,21 @@
+@mixin header {
+  background-color: #996633;
+    box-shadow: rgba(0, 0, 0, 0.18)0px 2px 4px;
+    position: relative;
+    z-index: 3;
+    height: 100px;
+    width: 100%;
+}
+.header{
+  @include header;
+  .logo-mark-forSign{
+    text-align: center;
+    font-size:56px;
+    font-family: 'DIN Condensed',sans-serif;
+    line-height: 100px;
+    a{
+    color: white;
+    text-decoration: none;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+= render "layouts/devise-header"
 %h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
@@ -19,3 +20,4 @@
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
+= render "layouts/footer"
