@@ -1,0 +1,7 @@
+@mixin awesome {
+  font-weight: bold;
+  display: inline-block;
+  font: normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+}
