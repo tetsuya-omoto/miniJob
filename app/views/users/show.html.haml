@@ -1,0 +1,42 @@
+= render "layouts/devise-header"
+.mypage-middle
+  .side-bar
+    %ul.sidebar-list
+      = link_to "", class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            マイページ
+      = link_to "", class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            プロフィール
+      = link_to "", class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            詳細情報
+      = link_to "", class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            お知らせ
+      = link_to "", class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            Job掲載
+      = link_to "", class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            依頼○件
+      = link_to "", class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            収入履歴
+      = link_to "", class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            支払い履歴
+      = link_to "", class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            ログアウト
+  .body-page
+= render "layouts/footer"

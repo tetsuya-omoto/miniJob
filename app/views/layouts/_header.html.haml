@@ -7,7 +7,13 @@
         = f.text_field :keyword, type: "search", placeholder: "検索フォームです！！", value: "", class: "texts", name: "keyword", id: ""
         = f.button class: "sub-button" do
           %i.fas.fa-search
-    .sign-btn.item.account
-      = link_to "新規登録", new_user_registration_path, class: "signup-account"
-    .login-btn.item.account
-      = link_to "ログイン", new_user_session_path, class: "login-account"
+    - if user_signed_in?
+      .sign-btn.item.account
+        = link_to "MyPage", user_path(current_user.id), class: "signup-account"
+      .login-btn.item.account
+        = link_to "Logout", destroy_user_session_path, method: :delete, class: "login-account"
+    - else
+      .sign-btn.item.account
+        = link_to "Signup", new_user_registration_path, class: "signup-account"
+      .login-btn.item.account
+        = link_to "Login", new_user_session_path, class: "login-account"

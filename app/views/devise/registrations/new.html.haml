@@ -1,22 +1,26 @@
 = render "layouts/devise-header"
 %h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+= form_for @user, url: signup_users_path, id: 'inputForm', name: "inputForm", method: :get do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    氏
+    = f.text_field :last_name, value: ""
   .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
+    名
+    = f.text_field :first_name, value: ""
   .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
+    ユーザー名
+    = f.text_field :nickname, value: ""
+  .field
+    メールアドレス
+    = f.text_field :email, value: ""
+  .field
+    パスワード
+    = f.text_field :password, value: ""
+  -# .field
+  -#   = f.label :password_confirmation
+  -#   %br/
+  -#   = f.password_field :password_confirmation, autocomplete: "new-password"
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
