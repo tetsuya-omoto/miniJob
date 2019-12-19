@@ -1,0 +1,13 @@
+= render "layouts/devise-header"
+.job-new-middle
+  .job-box
+    %ul.job-contents
+      = form_with model: @job, local: true do |f|
+        %li タイトル
+        = f.text_field :name, value: ''
+        %li 希望報酬
+        = f.text_field :hope_price, value: ''
+        %li 説明文
+        = f.text_area :text, value: ''
+        = f.submit "以上の内容で掲載する"
+= render "layouts/footer"

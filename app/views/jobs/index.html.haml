@@ -2,24 +2,25 @@
   = render "layouts/header"
   .top-page-middle
     .jobs-list
-      .jobs-list__box
-        .list-contents
-          %ul.left-list
-            %li.left-icon
-              =image_tag "gacky.jpg", size: "150x150"
-            %li.user-name
-              user.nickname
-          .right-list
-            %ul.right-list-top
-              %li.jobs-title
-                job.name
-              %li.jobs-price
-                希望価格 ¥job.price
-              %li.user-like-ave
-                ★3.5
-            %ul.right-list-bottom
-              %li.jobs-text
-                job.textです。200字以内の商品説明文を表示されるように設定します。
-                今書いてあるものは仮置きです。アイコンはガッキーです。可愛いですよね。
-                私はガッキーと貫地谷しほりが好きです。あなたはどの女優さんが好きですか？
+      - @jobs.each do |job|
+        = link_to job_path(job.id) do
+          .jobs-list__box
+            .list-contents
+              %ul.left-list
+                %li.left-icon
+                  =image_tag "gacky.jpg", size: "150x150"
+                %li.user-name
+                  %span= job.user.nickname
+              .right-list
+                %ul.right-list-top
+                  %li.jobs-title
+                    %span= job.name
+                  %li.jobs-price
+                    希望報酬:
+                    %span= job.hope_price
+                  %li.user-like-ave
+                    %p ★3.5
+                %ul.right-list-bottom
+                  %li.jobs-text
+                    %span= job.text
   = render "layouts/footer"

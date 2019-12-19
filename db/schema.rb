@@ -13,6 +13,10 @@
 ActiveRecord::Schema.define(version: 2019_12_17_074355) do
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name", default: "", null: false
+    t.string "hope_price", default: "", null: false
+    t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -18,7 +18,7 @@
         %li.side-bar-link
           .side-link-text
             お知らせ
-      = link_to "", class: "sidelink" do
+      = link_to new_job_path, class: "sidelink" do
         %li.side-bar-link
           .side-link-text
             Job掲載
@@ -34,9 +34,10 @@
         %li.side-bar-link
           .side-link-text
             支払い履歴
-      = link_to "", class: "sidelink" do
+      = link_to destroy_user_session_path, method: :delete, class: "sidelink" do
         %li.side-bar-link
           .side-link-text
             ログアウト
   .body-page
+    マイページです
 = render "layouts/footer"

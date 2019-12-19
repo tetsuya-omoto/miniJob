@@ -98,14 +98,14 @@ body{
   }
   .top-page-middle{
     height: calc(100vh - 222px);
+    overflow: scroll;
     .jobs-list{
       color: black;
-      background: white;
       margin: 5% 15% 0;
-      overflow: scroll;
-      box-shadow: rgba(0, 0, 0, 0.18)0px 2px 4px;
       &__box{
         background: white;
+        margin-bottom: 5%;
+        box-shadow: rgba(0, 0, 0, 0.18)0px 2px 4px;
         .list-contents{
           display: flex;
           padding: 15px;
