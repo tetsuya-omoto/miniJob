@@ -3,11 +3,14 @@
   .job-box
     %ul.job-contents
       = form_with model: @job, local: true do |f|
-        %li タイトル
-        = f.text_field :name, value: ''
-        %li 希望報酬
-        = f.text_field :hope_price, value: ''
-        %li 説明文
-        = f.text_area :text, value: ''
-        = f.submit "以上の内容で掲載する"
+        %li= @job.name
+        %li.left-icon
+          =image_tag "gacky.jpg", size: "150x150"
+        %li= @job.user.nickname
+        %li 
+          希望報酬:
+          %span= @job.hope_price
+        %li ★3.5
+        %li= @job.text
+        = f.submit "依頼メッセージを送る"
 = render "layouts/footer"
