@@ -5,5 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :jobs
          has_many :messages
-         has_many :message_jobs, through: :messages, source: :job
 end

@@ -7,5 +7,7 @@ Rails.application.routes.draw do
       get :signup
     end
   end
-  resources :jobs, only: [:index, :new, :create, :show]
+  resources :jobs, only: [:index, :new, :create, :show] do
+  resources :messages, only: [:new, :create]
+  end
 end

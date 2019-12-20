@@ -1,0 +1,32 @@
+.top-page-body
+  = render "layouts/devise-header"
+  .top-page-middle
+    .jobs-list
+      - if @messages == nil
+        %span メッセージはありません
+      - else
+        - @messages.each do |message|
+          .jobs-list__box
+            .list-contents
+              %ul.left-list
+                %li.left-icon
+                  =image_tag "gacky.jpg", size: "150x150"
+                %li.user-name
+                  a
+              .right-list
+                %ul.right-list-top
+                  %li.jobs-title
+                    a
+                  %li.jobs-price
+                    a
+                  %li.user-like-ave
+                    a
+                %ul.right-list-bottom
+                  %li.jobs-text
+                    a
+                    %span= message.text
+  .footer
+    .footer__content
+      = form_with model: @message, url: new_job_message_path(@job), local: true do |f|
+        = f.text_field :text, name: "message[text]"
+        = f.submit "送信"
