@@ -12,8 +12,8 @@
           %span= @request.price
           円
         %li= @request.text
-      = form_with model: @message, url: job_messages_path(@job), local: true do |f|
-        = f.submit "依頼を受ける"
-      = form_with model: @message, url: job_messages_path(@job), local: true do |f|
+      -# = form_with model: @del, url: new_job_request_del_path(@request), method: :get, local: true do |f|
+      -#   = f.submit "依頼を受ける"
+      = form_with model: @del, url: "/jobs/#{@job.id}/requests/#{@request.id}/dels/new", method: :get, local: true do |f|
         = f.submit "納品する"
 = render "layouts/footer"

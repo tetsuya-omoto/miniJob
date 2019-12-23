@@ -6,4 +6,5 @@ class User < ApplicationRecord
          has_many :jobs
          has_many :messages
          has_many :requests
+         has_many :dels
 end
