@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
   end
   resources :jobs, only: [:index, :new, :create, :show] do
-  resources :messages, only: [:new, :create]
+  resources :messages, only: [:create]
+  resources :requests, only: [:index, :new, :create, :show]
   end
 end

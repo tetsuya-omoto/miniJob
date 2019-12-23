@@ -30,3 +30,7 @@
       = form_with model: @message, url: new_job_message_path(@job), local: true do |f|
         = f.text_field :text, name: "message[text]"
         = f.submit "送信"
+      = form_with model: @deliverable, local: true do |f|
+        = f.text_field :data, name: "deliverable[data]", placeholder: "納品データのURLを書いてください"
+        = f.text_field :text, name: "deliverable[text]"
+        = f.submit "納品データを送る"

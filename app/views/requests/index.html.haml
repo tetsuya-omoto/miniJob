@@ -1,0 +1,15 @@
+= render "layouts/devise-header"
+- if @requests == nil
+  %span メッセージはありません
+- else
+  - @requests.each do |request|
+    .jobs-list__box
+      .list-contents
+        %ul.left-list
+          %li.user-name
+            %span= request.name
+          %ul.right-list-bottom
+            %li.jobs-text
+              %span= request.created_at.strftime("%Y-%m-%d %H:%M")
+          = link_to "詳細", "/jobs/#{@job.id}/requests/#{request.id}"
+

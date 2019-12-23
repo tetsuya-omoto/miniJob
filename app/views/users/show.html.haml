@@ -25,7 +25,13 @@
       = link_to "", class: "sidelink" do
         %li.side-bar-link
           .side-link-text
-            依頼○件
+            納品フォーム
+      = link_to job_requests_path(@user.jobs.ids), class: "sidelink" do
+        %li.side-bar-link
+          .side-link-text
+            依頼
+            %span= @requests
+            件
       = link_to "", class: "sidelink" do
         %li.side-bar-link
           .side-link-text

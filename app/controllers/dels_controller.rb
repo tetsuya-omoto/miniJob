@@ -1,0 +1,2 @@
+class DelsController < ApplicationController
+end

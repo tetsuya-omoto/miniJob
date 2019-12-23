@@ -1,0 +1,19 @@
+= render "layouts/devise-header"
+.job-detail-middle
+  .job-box
+    %ul.job-contents
+      .jobs-list
+        %li= @request.name
+        %li.left-icon
+          =image_tag "gacky.jpg", size: "150x150"
+        %li= @job.user.nickname
+        %li 
+          提示報酬:
+          %span= @request.price
+          円
+        %li= @request.text
+      = form_with model: @message, url: job_messages_path(@job), local: true do |f|
+        = f.submit "依頼を受ける"
+      = form_with model: @message, url: job_messages_path(@job), local: true do |f|
+        = f.submit "納品する"
+= render "layouts/footer"

@@ -2,7 +2,7 @@
 .job-detail-middle
   .job-box
     %ul.job-contents
-      = form_with model: @message, url: new_job_message_path(@job), method: :get, local: true do |f|
+      .jobs-list
         %li= @job.name
         %li.left-icon
           =image_tag "gacky.jpg", size: "150x150"
@@ -12,5 +12,23 @@
           %span= @job.hope_price
         %li ★3.5
         %li= @job.text
-        = f.submit "依頼メッセージを送る"
+      - if @job.messages == nil
+        %span メッセージはありません
+      - else
+        - @job.messages.each do |message|
+          .jobs-list__box
+            .list-contents
+              %ul.left-list
+                %li.left-icon
+                  =image_tag "gacky.jpg", size: "150x150"
+                %li.user-name
+                  %span= @job.user.nickname
+                %ul.right-list-bottom
+                  %li.jobs-text
+                    %span= message.text
+      = form_with model: @message, url: job_messages_path(@job), local: true do |f|
+        = f.text_field :text, name: "message[text]"
+        = f.submit "コメントする"
+      = form_with model: @message, url: new_job_request_path(@job), method: :get, local: true do |f|
+        = f.submit "依頼フォームを送る"
 = render "layouts/footer"

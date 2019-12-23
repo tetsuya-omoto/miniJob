@@ -1,0 +1,18 @@
+= render "layouts/devise-header"
+.job-detail-middle
+  .job-box
+    = form_with model: @request, url: job_requests_path(@job), method: :post, local: true do |f|
+      %ul.job-contents
+        .jobs-list
+          %li 依頼名
+          = f.text_field :name
+          %li 報酬
+          = f.text_field :price
+          円
+          %li 納期
+          = f.text_field :del_time
+          日
+          %li 内容
+          = f.text_area :text 
+        = f.submit "送信"
+= render "layouts/footer"
