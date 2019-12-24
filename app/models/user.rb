@@ -7,4 +7,5 @@ class User < ApplicationRecord
          has_many :messages
          has_many :requests
          has_many :dels
+         has_many :reviews
 end

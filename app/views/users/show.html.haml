@@ -24,14 +24,24 @@
             Job掲載
       = link_to submit_index_job_requests_path(@user, @jod), class: "sidelink" do
         %li.side-bar-link
-          .side-link-text
-            納品○件
+          -if @dels ==nil
+            .side-link-text
+            納品はございません
+          -else
+            .side-link-text
+              納品
+              %span= @dels.count
+              件
       = link_to job_requests_path(@user.job.id), class: "sidelink" do
         %li.side-bar-link
-          .side-link-text
-            依頼
-            %span= @requests.count
-            件
+          -if @requests ==nil
+            .side-link-text
+            依頼はございません
+          -else
+            .side-link-text
+              依頼
+              %span= @requests.count
+              件
       = link_to "", class: "sidelink" do
         %li.side-bar-link
           .side-link-text

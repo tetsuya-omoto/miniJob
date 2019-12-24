@@ -10,7 +10,8 @@
         %li 
           希望報酬:
           %span= @job.hope_price
-        %li ★3.5
+        ★
+        %span= @job.user.reviews.average(:star)
         %li= @job.text
       - if @job.messages == nil
         %span メッセージはありません

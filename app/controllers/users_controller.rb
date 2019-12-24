@@ -9,9 +9,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     @job = Job.find(params[:id])
     @requests = @job.requests
+    @dels = @job.user.dels
   end
 
   def signup

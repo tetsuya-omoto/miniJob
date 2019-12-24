@@ -18,8 +18,8 @@ Rails.application.routes.draw do
           post :purchase
           patch :purchase
         end
+        resources :reviews, only: [:create]
       end
     end
   end
-  resources :req_histories, only: [:show]
 end

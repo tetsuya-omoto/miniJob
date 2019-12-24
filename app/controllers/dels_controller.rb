@@ -20,6 +20,9 @@ class DelsController < ApplicationController
   def show
     @del = Del.find(params[:id])
   end
+  def purchase
+    @del = Del.find(params[:id])
+  end
 
   private
 

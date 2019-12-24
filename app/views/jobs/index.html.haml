@@ -3,6 +3,7 @@
   .top-page-middle
     .jobs-list
       - @jobs.each do |job|
+        -# -binding.pry
         = link_to job_path(job.id) do
           .jobs-list__box
             .list-contents
@@ -19,7 +20,8 @@
                     希望報酬:
                     %span= job.hope_price
                   %li.user-like-ave
-                    %p ★3.5
+                    ★
+                    -# %span= job.user.reviews.stars
                 %ul.right-list-bottom
                   %li.jobs-text
                     %span= job.text
