@@ -1,8 +1,9 @@
 class DelsController < ApplicationController
   before_action :set_request
-  # def index
-  #   @dels = @request.dels.includes(:user)
-  # end
+  before_action :set_job
+  def index
+    @dels = @request.dels.includes(:user)
+  end
   def new
     @del = Del.new
     # @dels = @request.dels.includes(:user)
@@ -17,15 +18,18 @@ class DelsController < ApplicationController
     end
   end
   def show
-    @del = del.find(params[:id])
+    @del = Del.find(params[:id])
   end
 
   private
 
   def del_params
-    params.require(:del).permit(:name, :text).merge(user_id: current_user.id, request_id: params[:request_id])
+    params.require(:del).permit(:name, :text).merge(user_id: current_user.id, job_id: params[:job_id], request_id: params[:request_id])
   end
   def set_request
     @request = Request.find(params[:request_id])
+  end
+  def set_job
+    @job = Job.find(params[:job_id])
   end
 end

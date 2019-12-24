@@ -19,7 +19,10 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
   end
-
+  def submit_index
+    @user = User.find(current_user.id)
+    @requests = @user.requests
+  end
   private
 
   def request_params

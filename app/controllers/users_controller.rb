@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @job = Job.find(params[:id])
-    @requests = @job.requests.count
+    @requests = @job.requests
   end
 
   def signup

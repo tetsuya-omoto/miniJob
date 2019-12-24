@@ -2,6 +2,7 @@ class CreateDels < ActiveRecord::Migration[5.2]
   def change
     create_table :dels do |t|
       t.integer  :user_id
+      t.integer  :job_id
       t.integer  :request_id
       t.string   :name
       t.integer   :price

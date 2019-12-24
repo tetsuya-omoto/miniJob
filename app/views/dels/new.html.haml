@@ -1,7 +1,7 @@
 = render "layouts/devise-header"
 .job-detail-middle
   .job-box
-    = form_with model: @del, url: job_request_dels_path(@request.id), method: :post, local: true do |f|
+    = form_with model: @del, url: job_request_dels_path(@job.id, @request.id), method: :post, local: true do |f|
       %ul.job-contents
         .jobs-list
           %li 依頼名
