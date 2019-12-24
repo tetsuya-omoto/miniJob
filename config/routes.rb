@@ -9,11 +9,16 @@ Rails.application.routes.draw do
   end
   resources :jobs, only: [:index, :new, :create, :show] do
     resources :messages, only: [:create]
-    resources :requests, only: [:index, :new, :create, :show]do
+    resources :requests, only: [:index, :new, :create, :show] do
       collection do
         get :submit_index
       end
-      resources :dels, only: [:index, :new, :create, :show]
+      resources :dels, only: [:index, :new, :create, :show] do
+        member do
+          post :purchase
+          patch :purchase
+        end
+      end
     end
   end
   resources :req_histories, only: [:show]

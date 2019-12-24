@@ -1,1 +1,10 @@
-hello
+= render "layouts/devise-header"
+.job-detail-middle
+  .job-box
+    %ul.job-contents
+      .jobs-list
+        %li= @del.name
+        %li= @del.text
+      = form_with model: @del, url: purchase_job_request_del_path(@job, @request, @del), method: :post, local: true do |f|
+        = f.submit "購入する"
+= render "layouts/footer"
