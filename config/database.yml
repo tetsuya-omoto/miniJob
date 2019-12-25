@@ -52,3 +52,4 @@ production:
   database: miniJob_production
   username: miniJob
   password: <%= ENV['MINIJOB_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
