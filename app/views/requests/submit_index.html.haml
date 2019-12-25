@@ -5,11 +5,11 @@
   この依頼の納品が来ています。
   - @requests.each do |request|
     .jobs-list__box 
-      = link_to job_request_del_path(@user, @job, request.id) do
+      = link_to job_request_del_path(@job, request.id, request.del.id) do
         .list-contents
           %ul.left-list
             %li.left-icon
-              =image_tag "gacky.jpg", size: "150x150"
+              =image_tag "icon.png", size: "150x150"
             %li.user-name
               %span= request.name
             %ul.right-list-bottom

@@ -9,7 +9,7 @@
             .list-contents
               %ul.left-list
                 %li.left-icon
-                  =image_tag "gacky.jpg", size: "150x150"
+                  =image_tag "icon.png", size: "150x150"
                 %li.user-name
                   %span= job.user.nickname
               .right-list
@@ -21,7 +21,7 @@
                     %span= job.hope_price
                   %li.user-like-ave
                     ★
-                    -# %span= job.user.reviews.stars
+                    %span= job.user.reviews.average(:star)
                 %ul.right-list-bottom
                   %li.jobs-text
                     %span= job.text

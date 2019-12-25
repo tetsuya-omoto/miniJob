@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:star, :text).merge(user_id: @del.user_id, del_id: params[:del_id])
+    params.require(:review).permit(:star, :text).merge(user_id: @del.user_id, del_id: @del.id)
   end
   def set_del
     @del = Del.find(params[:del_id])
