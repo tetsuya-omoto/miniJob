@@ -17,11 +17,11 @@
                   %li.jobs-title
                     %span= job.name
                   %li.jobs-price
-                    希望報酬:
+                    希望報酬:¥
                     %span= job.hope_price
                   %li.user-like-ave
                     ★
-                    %span= job.user.reviews.average(:star)
+                    %span= job.user.reviews.average(:star).floor(2).to_f
                 %ul.right-list-bottom
                   %li.jobs-text
                     %span= job.text
